@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
+const Reviews = require('./database-mongodb/database.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
