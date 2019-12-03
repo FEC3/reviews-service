@@ -11,20 +11,5 @@ db.on('connected', ()=>{
   console.log("DB connection good")
 });
 
-let reviewSchema = mongoose.Schema({
-  product_id: Number,
-  date: { type: Date, default: Date.now },
-  author: String,
-  title: String,
-  body: String,
-  recommend: Boolean,
 
-  helpful_count: Number,
-  not_helful_count: Number
-});
-
-let Review = mongoose.model('Review', reviewSchema);
-
-
-module.exports = Review;
 module.exports = db;
