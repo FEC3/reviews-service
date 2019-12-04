@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "version": "",
+  "name": "ikea",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "shu",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
