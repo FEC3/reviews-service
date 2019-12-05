@@ -7,6 +7,7 @@ let fakeReviewsList = [];
 
 for(var i = 0; i <PRODUCT_REVIEWS_AMOUNT;i++){
   var reviewsdata = {
+    overall_rating : Math.floor(Math.random() * 5) + 1,
     date: faker.date.between("2019-01-01", "2019-11-30"),
     author: faker.name.findName(),
     title: faker.random.words(),
@@ -30,7 +31,6 @@ let sampleReviews = [];
 for(var i = 1; i <= PRODUCT_AMOUNT; i++){
   let fakeReview = new Reviews({
     product_id: i,
-    overall_rating : Math.floor(Math.random() * 5) + 1,
     reviews: fakeReviewsList
   });
   sampleReviews.push(fakeReview)
