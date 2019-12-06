@@ -12,7 +12,7 @@ for(var i = 0; i <PRODUCT_REVIEWS_AMOUNT;i++){
     author: faker.name.findName(),
     title: faker.random.words(),
     body: faker.lorem.paragraph(),
-    recommend: faker.random.boolean(),
+    recommend: Math.round(Math.random()),
     value_rating:Math.floor(Math.random() * 5) + 1,
     quality_rating:Math.floor(Math.random() * 5) + 1,
     appearance_rating: Math.floor(Math.random() * 5) + 1,

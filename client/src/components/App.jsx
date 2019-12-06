@@ -1,12 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 // import sampledata from '../sample_data.js';
 import ReviewList from './ReviewList.jsx';
 import ReviewsDisplay from './ReviewsDisplay.jsx';
-const style = {
-  universal: {
-    'fontFamily': 'Noto Sans'
-  }
+
+const GeneralStyle = styled.div`
+
+justify-content: center;
+align-items: center;
+*{
+  margin: 0.25em 0;
 }
+`
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -53,12 +60,12 @@ class App extends React.Component {
   render(){
     // console.log("this is product from app.jsx: ",this.state.product)
     return (
-      <div id = 'app' style={style.universal}>
+      <GeneralStyle>
        <h2>Reviews</h2>
         <div className = 'ratingsnapshot'>Rating Snapshot</div>
         <div className = 'averagerating'>Average Customer Ratings</div>
         <ReviewsDisplay product = {this.state.product}/>
-      </div>
+        </GeneralStyle>
     )
   }
 }
