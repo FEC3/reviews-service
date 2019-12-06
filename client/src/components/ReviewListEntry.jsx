@@ -8,7 +8,12 @@ const Review = styled.div`
   display:flex;
   flex-direction:row;
 `
-
+const Header = styled.div`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24px;
+`
 
 const TitleStyle = styled.div`
   font-size: 14px;
@@ -24,43 +29,50 @@ const ContextStyle = styled.div`
   height: 57px;
 `
 const AuthorStyle = styled.div`
-font-size: 11px;
-color: rgb(51,51,51);
-font-weight: 400;
-line-height: 18px;
+  font-size: 11px;
+  color: rgb(51,51,51);
+  font-weight: 400;
+  line-height: 18px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1px;
+  margin:5px;
 `
 
 const DateStyle = styled.div`
   font-size: 11px;
-  color: #999999
+  color: #999999;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
 `
 const NoGold = styled.div`
-  height: 4px;
-  width: 44px;
-  border: 0.5px solid rgb(175, 175, 175)
+  height: 8px;
+  width: 50px;
+  border: 0.5px solid rgb(175, 175, 175);
+  border-collapse: collapse;
 `
 
-const Gold = styled.div `
+const Gold = styled.div`
   background: #fc0;
-  height: 4px;
-  width: 44px;
-  border: 0.5px solid rgb(175, 175, 175)
+  height: 8px;
+  width: 50px;
+  border: 0.2px solid rgb(175, 175, 175);
 `
 
-const Bar = styled.div`
-  font-size:11px;
-  height: 14px;
-  left: auto;
-  width: 282.719px;
-  height: 176px;
-  margin-left: 10px;
-  margin-right: 0px;
-  padding: 10px;
-  position: static;
+const Bar = styled.td`
+  border-collapse: collapse;
 `
 
-const ButtonStyle = styled.div`
-  background-color: rgb(237, 237, 237)
+
+const BarStyle = styled.div`
+  font-size: 11px;
+`
+
+const RecommendStyle = styled.div`
+  font-weight: 700;
+  font-size: 11px;
 `
 
 const FilledStar = styled(GoStar)`
@@ -73,8 +85,6 @@ const NoFilledStar = styled(GoStar)`
   font-size: 1em;
 `
 
-
-// const NoGold
 
 class ReviewListEntry extends React.Component {
   constructor(props){
@@ -120,20 +130,22 @@ class ReviewListEntry extends React.Component {
       <Review>
 
         <div className='left-single-review'>
-            <div className = 'star_rating'>
+            <Header>
+              <div>
               {this.ratingStars(this.props.review.overall_rating).map((star,i)=>(
                 <span key={`star-${i}`}>{star}</span>
               ))}
-            </div>
-            <div className = 'author_rating'>
-              <AuthorStyle>{this.props.review.author}</AuthorStyle>
-            </div>
+              </div>
 
-
+              <div>
+              <AuthorStyle>{this.props.review.author}</AuthorStyle>{'   '}
+              </div>
+              <div>
               <DateStyle>
                 {moment(this.props.review.date).fromNow()}
               </DateStyle>
-
+              </div>
+            </Header>
                 <TitleStyle>
                   {this.props.review.title}
                 </TitleStyle>
@@ -143,10 +155,11 @@ class ReviewListEntry extends React.Component {
                 </ContextStyle>
 
 
+                <BarStyle>{this.ifRecommend(this.props.review.recommend)}</BarStyle>
 
-                {this.ifRecommend(this.props.review.recommend)}
                 <div>
                   {/** Setting up for the buttons */}
+                  <BarStyle>
                   Helpful? {'   '}
                   <>
                     <style type="text/css">
@@ -158,6 +171,7 @@ class ReviewListEntry extends React.Component {
                       .btn-xxs {
                         padding: 0.2rem 0.5rem;
                         font-size: 0.5rem;
+                        font-weight: 700;
                       }
                       `}
                     </style>
@@ -168,73 +182,38 @@ class ReviewListEntry extends React.Component {
                     <Button variant="flat" size="xxs">No {this.props.review.helpful_count}</Button>{' '}
                     <Button variant="flat" size="xxs">Report</Button>
                   </>
+                  </BarStyle>
                   </div>
 
           </div>
 
           <div className ="right-single-review">
-          <Bar>
-        <div>Value for money</div>
+              <BarStyle>Value for money</BarStyle>
+                    <Bar>{this.ifBar(1, this.props.review.value_rating)}</Bar>
+                    <Bar>{this.ifBar(2, this.props.review.value_rating)}</Bar>
+                    <Bar>{this.ifBar(3, this.props.review.value_rating)}</Bar>
+                    <Bar>{this.ifBar(4, this.props.review.value_rating)}</Bar>
+                    <Bar>{this.ifBar(5, this.props.review.value_rating)}</Bar>
+              <BarStyle>Product quality</BarStyle>
+                    <Bar>{this.ifBar(1, this.props.review.quality_rating)}</Bar>
+                    <Bar>{this.ifBar(2, this.props.review.quality_rating)}</Bar>
+                    <Bar>{this.ifBar(3, this.props.review.quality_rating)}</Bar>
+                    <Bar>{this.ifBar(4, this.props.review.quality_rating)}</Bar>
+                    <Bar>{this.ifBar(5, this.props.review.quality_rating)}</Bar>
+              <BarStyle>Appearance</BarStyle>
+                    <Bar>{this.ifBar(1, this.props.review.apperance_rating)}</Bar>
+                    <Bar>{this.ifBar(2, this.props.review.apperance_rating)}</Bar>
+                    <Bar>{this.ifBar(3, this.props.review.apperance_rating)}</Bar>
+                    <Bar>{this.ifBar(4, this.props.review.apperance_rating)}</Bar>
+                    <Bar>{this.ifBar(5, this.props.review.apperance_rating)}</Bar>
 
-        <table className="value_for_money">
-          <tbody>
-            <tr>
-              <td >{this.ifBar(1, this.props.review.value_rating)}</td>
-              <td >{this.ifBar(2, this.props.review.value_rating)}</td>
-              <td >{this.ifBar(3, this.props.review.value_rating)}</td>
-              <td >{this.ifBar(4, this.props.review.value_rating)}</td>
-              <td >{this.ifBar(5, this.props.review.value_rating)}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div>Product quality</div>
-
-
-        <table className="product_quality">
-          <tbody>
-            <tr>
-              <td >{this.ifBar(1, this.props.review.quality_rating)}</td>
-              <td >{this.ifBar(2, this.props.review.quality_rating)}</td>
-              <td >{this.ifBar(3, this.props.review.quality_rating)}</td>
-              <td >{this.ifBar(4, this.props.review.quality_rating)}</td>
-              <td >{this.ifBar(5, this.props.review.quality_rating)}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div>Appearance</div>
-
-
-        <table className="appearance">
-          <tbody>
-            <tr>
-              <td >{this.ifBar(1, this.props.review.apperance_rating)}</td>
-              <td >{this.ifBar(2, this.props.review.apperance_rating)}</td>
-              <td >{this.ifBar(3, this.props.review.apperance_rating)}</td>
-              <td >{this.ifBar(4, this.props.review.apperance_rating)}</td>
-              <td >{this.ifBar(5, this.props.review.apperance_rating)}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div>Works as expected</div>
-
-
-        <table className="work_as_expected">
-          <tbody>
-            <tr>
-              <td >{this.ifBar(1, this.props.review.expected_rating)}</td>
-              <td >{this.ifBar(2, this.props.review.expected_rating)}</td>
-              <td >{this.ifBar(3, this.props.review.expected_rating)}</td>
-              <td >{this.ifBar(4, this.props.review.expected_rating)}</td>
-              <td >{this.ifBar(5, this.props.review.expected_rating)}</td>
-            </tr>
-          </tbody>
-        </table>
-        </Bar>
-
-          </div>
+              <BarStyle>Works as expected</BarStyle>
+                    <Bar>{this.ifBar(1, this.props.review.expected_rating)}</Bar>
+                    <Bar>{this.ifBar(2, this.props.review.expected_rating)}</Bar>
+                    <Bar>{this.ifBar(3, this.props.review.expected_rating)}</Bar>
+                    <Bar>{this.ifBar(4, this.props.review.expected_rating)}</Bar>
+                    <Bar>{this.ifBar(5, this.props.review.expected_rating)}</Bar>
+              </div>
 
       </Review>
       </div>

@@ -5,12 +5,9 @@ import ReviewList from './ReviewList.jsx';
 import ReviewsDisplay from './ReviewsDisplay.jsx';
 
 const GeneralStyle = styled.div`
-
-justify-content: center;
-align-items: center;
-*{
-  margin: 0.25em 0;
-}
+  width: 1020.81px;
+  height: 919.5px;
+  margin: auto;
 `
 
 
@@ -60,12 +57,14 @@ class App extends React.Component {
   render(){
     // console.log("this is product from app.jsx: ",this.state.product)
     return (
-      <GeneralStyle>
+      <div>
        <h2>Reviews</h2>
         <div className = 'ratingsnapshot'>Rating Snapshot</div>
         <div className = 'averagerating'>Average Customer Ratings</div>
+        <GeneralStyle>
         <ReviewsDisplay product = {this.state.product}/>
         </GeneralStyle>
+        </div>
     )
   }
 }
