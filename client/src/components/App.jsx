@@ -4,13 +4,27 @@ import styled from 'styled-components';
 import ReviewList from './ReviewList.jsx';
 import ReviewsDisplay from './ReviewsDisplay.jsx';
 import AverageRating from './AverageRating.jsx';
+import Snapshot from './Snapshot.jsx';
 
+const UpperandLower  = styled.div`
+margin-left: auto;
+margin-right: auto
+`
 const GeneralStyle = styled.div`
   width: 1020.81px;
   height: 919.5px;
   margin: auto;
 `
 
+const Upper = styled.div`
+  width: 1109.81px;
+  height: 239.5px;
+
+  display: inline-flex;
+  flex-direction: row;
+  left: 50%;
+  margin-left: 330px;
+`
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +32,11 @@ class App extends React.Component {
     this.state = {
       product:{
         product_id: null,
-        // overall_rating: null,
+        five_star:null,
+        four_star:null,
+        three_star:null,
+        two_star:null,
+        one_star:null,
         avg_overall_total: null,
         avg_value_rating: null,
         avg_quality_rating: null,
@@ -35,7 +53,7 @@ class App extends React.Component {
           apperance_rating: null,
           expected_rating: null,
           helpful_count: null,
-          not_helful_count: null
+          not_helpful_count: null
         }]
       }
     }
@@ -63,15 +81,16 @@ class App extends React.Component {
   render(){
     // console.log("this is product from app.jsx: ",this.state.product)
     return (
-      <div>
-       <h2>Reviews</h2>
-        {/* <div className = 'ratingsnapshot'>Rating Snapshot</div> */}
-
-        <AverageRating product = {this.state.product}/>
+      <UpperandLower>
+        <h2>Reviews</h2>
+        <Upper>
+          <Snapshot product = {this.state.product}/>
+          <AverageRating product = {this.state.product}/>
+        </Upper>
         <GeneralStyle>
-        <ReviewsDisplay product = {this.state.product}/>
+          <ReviewsDisplay product = {this.state.product}/>
         </GeneralStyle>
-        </div>
+      </UpperandLower>
     )
   }
 }

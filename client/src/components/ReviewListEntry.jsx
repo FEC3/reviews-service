@@ -179,7 +179,7 @@ class ReviewListEntry extends React.Component {
                     <Button variant="flat" size="xxs">
                     Yes {this.props.review.helpful_count}
                     </Button>{' '}
-                    <Button variant="flat" size="xxs">No {this.props.review.helpful_count}</Button>{' '}
+                    <Button variant="flat" size="xxs">No {this.props.review.not_helpful_count}</Button>{' '}
                     <Button variant="flat" size="xxs">Report</Button>
                   </>
                   </BarStyle>

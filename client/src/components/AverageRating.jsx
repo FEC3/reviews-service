@@ -7,13 +7,11 @@ const OneReviewStyle = styled.div`
   font-size: 11px;
   height: 237px;
   width: 542.906px;
-
 `
 // width: 542.906px;
 const Valuemoney = styled.div`
   display: inline-flex;
   flex-direction: row;
-
 `
 const Title = styled.div`
   padding-top: 10px;
@@ -112,7 +110,9 @@ class AverageRating extends React.Component{
     return (
       <div>
         <OneReviewStyle>
-
+        <div>
+          Average Customer Ratings
+        </div>
         <Valuemoney>
             <Title>Overall</Title>
             <Starstyle>
