@@ -12,10 +12,6 @@ const ReviewList = (props) => {
   // let reviews = props.product.reviews;
   return (
     <div>
-      this is the rating
-      {/* {props.product.overall_rating} */}
-
-      <h3>HERE are the reviews</h3>
       <OneReviewStyle>
       {props.product.reviews.map(review=>(
 

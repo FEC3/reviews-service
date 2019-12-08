@@ -18,7 +18,7 @@ for(var i = 0; i <PRODUCT_REVIEWS_AMOUNT;i++){
     appearance_rating: Math.floor(Math.random() * 5) + 1,
     expected_rating: Math.floor(Math.random() * 5) + 1,
     helpful_count: Math.floor(Math.random() * 30),
-    not_helful_count:Math.floor(Math.random() * 30)
+    not_helful_count:Math.floor(Math.random() * 10)
   }
   fakeReviewsList.push(reviewsdata)
 }
@@ -31,6 +31,11 @@ let sampleReviews = [];
 for(var i = 1; i <= PRODUCT_AMOUNT; i++){
   let fakeReview = new Reviews({
     product_id: i,
+    avg_overall_total: Math.floor(Math.random() * 5) + 1,
+    avg_value_rating: Math.floor(Math.random() * 5) + 1,
+    avg_quality_rating: Math.floor(Math.random() * 5) + 1,
+    avg_apperance_rating: Math.floor(Math.random() * 5) + 1,
+    avg_expected_rating: Math.floor(Math.random() * 5) + 1,
     reviews: fakeReviewsList
   });
   sampleReviews.push(fakeReview)

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // import sampledata from '../sample_data.js';
 import ReviewList from './ReviewList.jsx';
 import ReviewsDisplay from './ReviewsDisplay.jsx';
+import AverageRating from './AverageRating.jsx';
 
 const GeneralStyle = styled.div`
   width: 1020.81px;
@@ -17,7 +18,12 @@ class App extends React.Component {
     this.state = {
       product:{
         product_id: null,
-        overall_rating: null,
+        // overall_rating: null,
+        avg_overall_total: null,
+        avg_value_rating: null,
+        avg_quality_rating: null,
+        avg_apperance_rating: null,
+        avg_expected_rating:null,
         reviews : [{
           date:null,
           author: null,
@@ -59,8 +65,9 @@ class App extends React.Component {
     return (
       <div>
        <h2>Reviews</h2>
-        <div className = 'ratingsnapshot'>Rating Snapshot</div>
-        <div className = 'averagerating'>Average Customer Ratings</div>
+        {/* <div className = 'ratingsnapshot'>Rating Snapshot</div> */}
+
+        <AverageRating product = {this.state.product}/>
         <GeneralStyle>
         <ReviewsDisplay product = {this.state.product}/>
         </GeneralStyle>

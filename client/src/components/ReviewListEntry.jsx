@@ -50,7 +50,7 @@ const DateStyle = styled.div`
 const NoGold = styled.div`
   height: 8px;
   width: 50px;
-  border: 0.5px solid rgb(175, 175, 175);
+  border: 0.5px solid rgb(205, 205, 205);
   border-collapse: collapse;
 `
 
@@ -58,7 +58,7 @@ const Gold = styled.div`
   background: #fc0;
   height: 8px;
   width: 50px;
-  border: 0.2px solid rgb(175, 175, 175);
+  border: 0.2px solid rgb(205, 205, 205);
 `
 
 const Bar = styled.td`
