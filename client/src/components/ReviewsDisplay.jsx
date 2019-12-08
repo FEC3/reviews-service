@@ -6,7 +6,6 @@ let ReviewsDisplay = (props) => {
   return (
     <div id = 'review-display'>
       <ReviewList product = {props.product}/>
-
     </div>
   )
 }
