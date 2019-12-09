@@ -15,8 +15,6 @@ app.get("/reviews/:id", (req,res)=> {
   console.log("====id:",id)
   Reviews.fetchData(id).then(data=>res.send(data))
 
-
-
 });
 
 app.listen(PORT, () => {
