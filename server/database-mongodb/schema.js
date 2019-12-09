@@ -18,6 +18,14 @@ let reviewSchema = new mongoose.Schema({
 });
 
 let Reviews = mongoose.model('Reviews', reviewSchema);
+let fetchData = (id) => {
+  return new Promise((resolve, reject)=>{
+    Reviews.findOne({product_id:id}).exec(function(err, data){
+      resolve(data);
+    })
+  })
+};
 
 
 module.exports = Reviews;
+module.exports.fetchData=fetchData;
