@@ -64,7 +64,9 @@ class App extends React.Component {
   }
 
   fetch(){
-    let id = new URLSearchParams(document.location.search.substring(1)).get('id');
+    let id = new URLSearchParams(document.location.search.substring(1))
+    // .get('id');
+    .get('id') || 1;
     fetch(`http://127.0.0.1:3003/reviews/${id}`)
     .then((res)=>{
       return res.json();
@@ -88,7 +90,7 @@ class App extends React.Component {
           <AverageRating product = {this.state.product}/>
         </Upper>
         <GeneralStyle>
-          <ReviewsDisplay product = {this.state.product}/>
+          <ReviewList product = {this.state.product}/>
         </GeneralStyle>
       </UpperandLower>
     )

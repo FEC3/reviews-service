@@ -76,7 +76,7 @@ class Snapshot extends React.Component{
   render(){
     return (
       <OneReviewStyle>
-        <div>
+        <div className='rating-snapshot'>
           Rating Snapshot
         </div>
         <div>
