@@ -89,9 +89,9 @@ class AverageRating extends React.Component{
 
     for(var i = 0; i <= 4; i++){
       if(i < num){
-        stars.push(<FilledStar/>);
+        stars.push(<FilledStar className='stars'/>);
       }else {
-        stars.push(<NoFilledStar/>);
+        stars.push(<NoFilledStar className='nostars'/>);
       }
     }
     return stars;
@@ -100,9 +100,9 @@ class AverageRating extends React.Component{
 
   ifBar(num, rating){
     if(num > Number(rating)){
-      return <NoGold />
+      return <NoGold className="nogold"/>
     }else{
-      return <Gold />
+      return <Gold className="gold"/>
     }
   }
 
@@ -121,7 +121,7 @@ class AverageRating extends React.Component{
                     ))}
             </Starstyle>
             <OverNumber>
-              <div>
+              <div className='avg-overall-total'>
               {this.props.product.avg_overall_total}
               </div>
             </OverNumber>
@@ -136,7 +136,7 @@ class AverageRating extends React.Component{
 
 
 
-        <Barstyle>
+        <Barstyle className='bar-style'>
             <Bar>{this.ifBar(1, this.props.product.avg_value_rating)}</Bar>
             <Bar>{this.ifBar(2, this.props.product.avg_value_rating)}</Bar>
             <Bar>{this.ifBar(3, this.props.product.avg_value_rating)}</Bar>

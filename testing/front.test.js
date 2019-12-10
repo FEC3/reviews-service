@@ -27,6 +27,13 @@ describe('Snapshot Component',()=>{
     expect(component.find('.rating-snapshot')).toHaveLength(1);
   })
 
+  test('Includes elements',()=>{
+    const component = shallow(<Snapshot product={Sample[0]} />);
+
+    expect(component.find('.nogold')).toHaveLength(19);
+    expect(component.find('.gold')).toHaveLength(6);
+  })
+
 })
 
 describe('ReviewList Component',()=>{
@@ -51,6 +58,36 @@ describe('ReviewListEntry Component',()=>{
     const component = shallow(<ReviewListEntry review={Sample[0].reviews}/>,
     {disableLifecycleMethods: true});
     expect(component.find('.rating-stars')).toHaveLength(1);
+  })
+
+})
+
+describe('AverageRating Component',()=>{
+  test('Includes elements',()=>{
+    const component = shallow(<AverageRating product={Sample[0]}/>,
+    {disableLifecycleMethods: true});
+    expect(component).toHaveLength(1);
+  })
+
+  test('Check average overall',()=>{
+    const component = shallow(<AverageRating product={Sample[0]} />,
+    {disableLifecycleMethods: true});
+    expect(component.find('.avg-overall-total')).toHaveLength(1);
+  })
+
+  test('Check bars',()=>{
+    const component = shallow(<AverageRating product={Sample[0]} />,
+    {disableLifecycleMethods: true});
+    expect(component.find('.nogold')).toHaveLength(7);
+    expect(component.find('.gold')).toHaveLength(13);
+  })
+
+
+  test('Check stars',()=>{
+    const component = shallow(<AverageRating product={Sample[0]} />,
+    {disableLifecycleMethods: true});
+    expect(component.find('.stars')).toHaveLength(3);
+    expect(component.find('.nostars')).toHaveLength(2);
   })
 
 })

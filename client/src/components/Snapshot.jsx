@@ -67,9 +67,9 @@ class Snapshot extends React.Component{
   }
   ifBar(num, rating){
     if(num > Number(rating)){
-      return <NoGold />
+      return <NoGold className='nogold'/>
     }else{
-      return <Gold />
+      return <Gold className='gold'/>
     }
   }
 
