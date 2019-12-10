@@ -8,13 +8,12 @@ const OneReviewStyle = styled.div`
 `
 
 const ReviewList = (props) => {
-  console.log("what is props in reviewlist?",props.product.reviews)
+  // console.log("what is props in reviewlist?",props.product.reviews)
   // let reviews = props.product.reviews;
   return (
-    <div>
+    <div className = 'review-list'>
       <OneReviewStyle>
       {props.product.reviews.map(review=>(
-
         <ReviewListEntry review = {review} key = {review.author} />
       ))}
       </OneReviewStyle>

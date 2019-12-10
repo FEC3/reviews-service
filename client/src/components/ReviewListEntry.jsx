@@ -117,21 +117,21 @@ class ReviewListEntry extends React.Component {
 
   ifBar(num, rating){
     if(num > Number(rating)){
-      return <NoGold />
+      return <NoGold className='nogold'/>
     }else{
-      return <Gold />
+      return <Gold className='gold'/>
     }
   }
 
   render(){
     return (
-      <div>
+      <div id='review-list-entry'>
       <hr style={{ border: '1px dotted', borderstyle: 'none none dotted', color: 'rgb(225,225,225' }} />
       <Review>
 
         <div className='left-single-review'>
             <Header>
-              <div>
+              <div className = 'rating-stars'>
               {this.ratingStars(this.props.review.overall_rating).map((star,i)=>(
                 <span key={`star-${i}`}>{star}</span>
               ))}
