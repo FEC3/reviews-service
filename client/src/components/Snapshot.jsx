@@ -14,6 +14,23 @@ const Snap = styled.div`
   flex-direction: row;
   height: 23px;
 `
+const Secondword = styled.div`
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 19px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-inline-end: 5px;
+  margin-inline-start: 5px;
+`
+
+const Snapwords = styled.div`
+  padding: 10px;
+  height: 18px;
+  margin-bottom: 10px;
+`
 
 const Bar = styled.table`
   margin-top: 6px;
@@ -77,10 +94,14 @@ class Snapshot extends React.Component{
     return (
       <OneReviewStyle>
         <div className='rating-snapshot'>
+          <Snapwords>
           Rating Snapshot
+          </Snapwords>
         </div>
         <div>
+          <Secondword>
           Select a row below to filter reviews
+          </Secondword>
         </div>
         <Snap>
           <Num>

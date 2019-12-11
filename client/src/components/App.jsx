@@ -16,14 +16,20 @@ const GeneralStyle = styled.div`
   margin: auto;
 `
 
+const Review = styled.div`
+  width: 73.617px;
+  height: 39px;
+  margin-right: 35px;
+`
+
 const Upper = styled.div`
   width: 1109.81px;
   height: 239.5px;
   display: inline-flex;
   flex-direction: row;
-  left: 50%;
-  margin-left: 330px;
+  margin-left: 25%;
 `
+
 
 class App extends React.Component {
   constructor(props) {
@@ -83,8 +89,9 @@ class App extends React.Component {
     // console.log("this is product from app.jsx: ",this.state.product)
     return (
       <UpperandLower>
-        <h4>Reviews</h4>
+
         <Upper>
+        <Review>Reviews</Review>
           <Snapshot product = {this.state.product}/>
           <AverageRating product = {this.state.product}/>
         </Upper>

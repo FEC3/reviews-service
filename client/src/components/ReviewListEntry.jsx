@@ -222,5 +222,3 @@ class ReviewListEntry extends React.Component {
 }
 
 export default ReviewListEntry;
-
-
