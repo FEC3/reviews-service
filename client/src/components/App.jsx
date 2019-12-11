@@ -19,7 +19,6 @@ const GeneralStyle = styled.div`
 const Upper = styled.div`
   width: 1109.81px;
   height: 239.5px;
-
   display: inline-flex;
   flex-direction: row;
   left: 50%;
@@ -84,7 +83,7 @@ class App extends React.Component {
     // console.log("this is product from app.jsx: ",this.state.product)
     return (
       <UpperandLower>
-        <h2>Reviews</h2>
+        <h4>Reviews</h4>
         <Upper>
           <Snapshot product = {this.state.product}/>
           <AverageRating product = {this.state.product}/>
