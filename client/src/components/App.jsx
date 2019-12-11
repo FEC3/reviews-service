@@ -7,8 +7,9 @@ import AverageRating from './AverageRating.jsx';
 import Snapshot from './Snapshot.jsx';
 
 const UpperandLower  = styled.div`
-margin-left: auto;
-margin-right: auto
+  margin-left: auto;
+  margin-right: auto;
+  width: 1020.81px;
 `
 const GeneralStyle = styled.div`
   width: 1020.81px;
@@ -19,7 +20,7 @@ const GeneralStyle = styled.div`
 const Review = styled.div`
   width: 73.617px;
   height: 39px;
-  margin-right: 35px;
+  margin-right: 10px;
 `
 
 const Upper = styled.div`
@@ -27,7 +28,7 @@ const Upper = styled.div`
   height: 239.5px;
   display: inline-flex;
   flex-direction: row;
-  margin-left: 25%;
+  margin-left: 5%;
 `
 
 
@@ -89,6 +90,7 @@ class App extends React.Component {
     // console.log("this is product from app.jsx: ",this.state.product)
     return (
       <UpperandLower>
+        <hr style={{ border: '1px dotted', borderstyle: 'none none dotted', color: 'rgb(225,225,225' }} />
 
         <Upper>
         <Review>Reviews</Review>
