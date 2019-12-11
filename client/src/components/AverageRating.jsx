@@ -8,6 +8,15 @@ const OneReviewStyle = styled.div`
   height: 237px;
   width: 542.906px;
 `
+
+
+const Average = styled.div`
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  height: 18px;
+  margin-bottom: 10px;
+`
 // width: 542.906px;
 const Valuemoney = styled.div`
   display: inline-flex;
@@ -74,7 +83,7 @@ const Gold = styled.div`
   background: #fc0;
   height: 8px;
   width: 35px;
-  border: 0.2px solid rgb(205, 205, 205);
+  border: 0.5px solid rgb(205, 205, 205);
 `
 
 class AverageRating extends React.Component{
@@ -111,7 +120,9 @@ class AverageRating extends React.Component{
       <div>
         <OneReviewStyle>
         <div>
+          <Average>
           Average Customer Ratings
+          </Average>
         </div>
         <Valuemoney>
             <Title>Overall</Title>
