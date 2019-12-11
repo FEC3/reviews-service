@@ -37,6 +37,7 @@ const OverNumber = styled.div`
   padding-top: 10px;
   margin-right:25;
   width: 18px;
+  height: 24px;
 `
 
 const Starstyle = styled.div`
@@ -44,7 +45,8 @@ const Starstyle = styled.div`
   font-size:20px;
   margin-left: 6px;
   margin-right: 6px;
-  width: 195px;
+  width: 144px;
+  height: 24px;
 `
 
 
