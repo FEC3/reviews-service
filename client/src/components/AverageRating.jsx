@@ -17,7 +17,7 @@ const Average = styled.div`
   height: 18px;
   margin-bottom: 10px;
 `
-// width: 542.906px;
+
 const Valuemoney = styled.div`
   display: inline-flex;
   flex-direction: row;
@@ -33,9 +33,9 @@ const Numberrating = styled.div`
 `
 
 const OverNumber = styled.div`
-  padding-left: 25px;
+  padding-left: 75px;
   padding-top: 10px;
-  margin-right:25;
+  margin-right:10px;
   width: 18px;
   height: 24px;
 `
