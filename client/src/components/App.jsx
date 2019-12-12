@@ -10,6 +10,7 @@ const UpperandLower  = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 1020.81px;
+  font-weight: 400;
 `
 const GeneralStyle = styled.div`
   width: 1020.81px;

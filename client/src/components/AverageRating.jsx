@@ -7,6 +7,7 @@ const OneReviewStyle = styled.div`
   font-size: 11px;
   height: 237px;
   width: 542.906px;
+  font-weight: 400;
 `
 
 
@@ -33,9 +34,8 @@ const Numberrating = styled.div`
 `
 
 const OverNumber = styled.div`
-  padding-left: 75px;
+  padding-left: 25px;
   padding-top: 10px;
-  margin-right:10px;
   width: 18px;
   height: 24px;
 `
@@ -76,7 +76,7 @@ const Bar = styled.td`
 
 const NoGold = styled.div`
   height: 8px;
-  width: 35px;
+  width: 28.8px;
   border: 0.5px solid rgb(205, 205, 205);
   border-collapse: collapse;
 `
@@ -84,7 +84,7 @@ const NoGold = styled.div`
 const Gold = styled.div`
   background: #fc0;
   height: 8px;
-  width: 35px;
+  width: 28.8px;
   border: 0.5px solid rgb(205, 205, 205);
 `
 
