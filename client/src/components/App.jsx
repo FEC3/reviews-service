@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import sampledata from '../sample_data.js';
+
 import ReviewList from './ReviewList.jsx';
 import ReviewsDisplay from './ReviewsDisplay.jsx';
 import AverageRating from './AverageRating.jsx';
