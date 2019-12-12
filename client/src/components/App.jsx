@@ -73,7 +73,7 @@ class App extends React.Component {
     let pid = new URLSearchParams(document.location.search.substring(1))
     // .get('id');
     .get('pid') || 1;
-    fetch(`http://127.0.0.1:3003/reviews/${pid}`)
+    fetch(`/reviews/${pid}`)
     .then((res)=>{
       return res.json();
     }).then((res)=>{
