@@ -195,11 +195,11 @@ class ReviewListEntry extends React.Component {
             Yes {this.state.count}
             </Button>
 
-                    {' '}
+            {'   '}
 
                     <Button variant="flat" size="xxs" onClick={this.clickNoBtn}>
             No {this.state.nocount}
-            </Button>
+            </Button>{'   '}
                     {/* <Button variant="flat" size="xxs">No {this.props.review.not_helpful_count}</Button>{' '} */}
                     <Button variant="flat" size="xxs">Report</Button>
                   </>
