@@ -17,6 +17,9 @@ const Average = styled.div`
   padding-bottom: 10px;
   height: 18px;
   margin-bottom: 10px;
+  font-weight: 400;
+  color: rgb(51, 51, 51)
+  font-size: 30px;
 `
 
 const Valuemoney = styled.div`
@@ -34,7 +37,7 @@ const Numberrating = styled.div`
 `
 
 const OverNumber = styled.div`
-  padding-left: 25px;
+  padding-left: 30px;
   padding-top: 10px;
   width: 18px;
   height: 24px;

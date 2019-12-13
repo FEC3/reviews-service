@@ -11,6 +11,7 @@ const UpperandLower  = styled.div`
   margin-right: auto;
   width: 1020.81px;
   font-weight: 400;
+  color: rgb(51, 51, 51)
 `
 const GeneralStyle = styled.div`
   width: 1020.81px;
