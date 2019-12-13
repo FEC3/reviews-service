@@ -9,6 +9,11 @@ module.exports = {
     path: DIST_DIR,
     filename: 'bundle.js'
   },
+  optimization: {
+    runtimeChunk: {
+      name: "vendor"
+    }
+  },
   module: {
     rules: [
       {
