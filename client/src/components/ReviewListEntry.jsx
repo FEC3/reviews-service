@@ -89,6 +89,20 @@ const NoFilledStar = styled(GoStar)`
 class ReviewListEntry extends React.Component {
   constructor(props){
     super(props);
+    this.state = {count:this.props.review.helpful_count, nocount: this.props.review.not_helpful_count};
+    this.clickBtn = this.clickBtn.bind(this);
+    this.clickNoBtn = this.clickNoBtn.bind(this);
+  }
+  clickBtn(){
+    this.setState({
+        count: this.state.count + 1,
+    });
+  }
+
+  clickNoBtn(){
+    this.setState({
+        nocount: this.state.nocount+1
+    });
   }
 
 
@@ -176,10 +190,17 @@ class ReviewListEntry extends React.Component {
                       `}
                     </style>
 
-                    <Button variant="flat" size="xxs">
-                    Yes {this.props.review.helpful_count}
-                    </Button>{' '}
-                    <Button variant="flat" size="xxs">No {this.props.review.not_helpful_count}</Button>{' '}
+
+            <Button variant="flat" size="xxs" onClick={this.clickBtn}>
+            Yes {this.state.count}
+            </Button>
+
+                    {' '}
+
+                    <Button variant="flat" size="xxs" onClick={this.clickNoBtn}>
+            No {this.state.nocount}
+            </Button>
+                    {/* <Button variant="flat" size="xxs">No {this.props.review.not_helpful_count}</Button>{' '} */}
                     <Button variant="flat" size="xxs">Report</Button>
                   </>
                   </BarStyle>
